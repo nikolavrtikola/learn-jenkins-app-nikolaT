@@ -25,6 +25,6 @@ pipeline {
             steps {
                 echo 'Hello World From the  test stage'
             }
-      
+        }
     }
 }
