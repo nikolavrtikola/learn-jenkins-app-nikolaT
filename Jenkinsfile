@@ -2,10 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
-            agent docker {
+        stage('Build') {
+          agent {
+                docker {
                     image 'node:18-alpine'
                     reuseNode true
+                }
             }
             steps {
                 echo 'Hello World Nikola commint on Github!'
