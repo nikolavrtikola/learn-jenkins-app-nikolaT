@@ -10,7 +10,7 @@ pipeline {
                 }
             }
             steps {
-                echo 'Hello World Nikola commint on Github!'
+                echo 'Hello World Nikola commint on Github! Build Stage'
                 sh '''
                     ls -la
                     node --version
@@ -31,7 +31,7 @@ pipeline {
             }
 
             steps {
-                echo 'Hello World From the  test stage ..neka ostane'
+                echo 'Hello World From the  test stage ..neka ostane Test Stage!!!'
                 sh '''
                 test -f build/index.html
                 npm test
@@ -55,6 +55,7 @@ pipeline {
                             npx playwright test  --reporter=html
                         '''
                     }
+        }
 
         stage('Deploy') {
             agent {
@@ -71,7 +72,7 @@ pipeline {
             }
         }            
 
-    }
+    
 
 
     post {
