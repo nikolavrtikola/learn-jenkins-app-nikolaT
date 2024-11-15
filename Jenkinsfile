@@ -12,6 +12,7 @@ pipeline {
             }
             steps {
                 sh '''
+                    echo "Thisd is the Build stage"
                     ls -la
                     node --version
                     npm --version
@@ -34,6 +35,7 @@ pipeline {
 
                     steps {
                         sh '''
+                            echo "Thisd is the Tests stage"
                             #test -f build/index.html
                             npm test
                         '''
@@ -55,6 +57,7 @@ pipeline {
 
                     steps {
                         sh '''
+                            echo "This is the E2E stage Testing"
                             npm install serve
                             node_modules/.bin/serve -s build &
                             sleep 10
@@ -80,6 +83,7 @@ pipeline {
             }
             steps {
                 sh '''
+                    echo "This is the Deployment Stage"
                     npm install netlify-cli
                     node_modules/.bin/netlify --version
                 '''
