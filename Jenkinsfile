@@ -90,7 +90,7 @@ pipeline {
                     echo "This is the Deployment Stage"
                     npm install netlify-cli
                     node_modules/.bin/netlify --version
-                    echo "This is the Deployment of the site $NETLIFY_SITE_ID
+                    echo "This is the Deployment of the site $NETLIFY_SITE_ID"
                 '''
             }
         }
